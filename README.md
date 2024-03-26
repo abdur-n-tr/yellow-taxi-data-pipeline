@@ -9,7 +9,7 @@ Here's a glimpse of the ride analysis dashboard built on the top of this ride da
 
 ![ride_analysis_report](./artifacts/ride_analysis_report.png)
 
-## Data Pipeline Architecture
+# Data Pipeline Architecture
 
 Following AWS services and tools have been used to build this pipeline
 - AWS S3
@@ -20,14 +20,14 @@ Following AWS services and tools have been used to build this pipeline
 
 ![rides_data_pipeline_architecture](./artifacts/rides_data_pipeline_architecture.jpeg)
 
-## Dimensional Modelling
+# Dimensional Modelling
 
 Dimensional modelling is one of the most important step in building a datawarehouse. Following data model is built based on the
 required analysis which can be changed based no further requirements,
 
 ![rides_data_pipeline_architecture](./artifacts/Yellow-Taxi-Data-Model.jpeg)
 
-### Optimization in Data Model from Redshift Perspective
+# Optimization in Data Model from Redshift Perspective
 
 - Dimension table encodings are set to `AUTO` while fact table encodings are set by analyzing compression reduction from the redshift.
 Below we can see the reduction percentage suggested by redshift for fact table,
@@ -46,7 +46,7 @@ key in dimension table kept to be same to avoid explict casting in query plan.
 
 - `NOT NULL` constraint is also set on foreign and primary key to avoid explict NOT NULL check in query plan.
 
-## Cost Optimization for AWS GLue Jobs
+# Cost Optimization for AWS GLue Jobs
 
 - AWS Glue docker image was built locally to develop and test the pipeline locally.
 
@@ -55,7 +55,7 @@ development takes rougly 5 hours including testing and final deployment then we 
 cost of `5*10= 50 hours = 50 * 0.44 = 22$` but in my case, it took `less than 1$ ~ 95% cost reduction` as all the glue pipeline developmenet and testing was done locally by building the `Glue docker image locally`.
 
 
-## Power BI Dashboard
+# Power BI Dashboard
 
 - `AWS Redshift` data warehouse was integrated with `Power BI` and an `analysis report` is created to give insights to business and 
 marketing team to make data-drive decision. For dashboard, refer to the top of this docs, where anlysis report is attached.
